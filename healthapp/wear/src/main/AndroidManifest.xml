@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest package="com.example.healthconnectwearapp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Ứng dụng chỉ chạy trên thiết bị Wear OS -->
+    <uses-feature android:name="android.hardware.type.watch" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.health.READ_STEPS" />
+    <uses-permission android:name="android.permission.health.WRITE_STEPS" />
+    <uses-permission android:name="android.permission.health.READ_TOTAL_CALORIES_BURNED" />
+    <uses-permission android:name="android.permission.health.WRITE_ACTIVE_CALORIES_BURNED" />
+    <uses-permission android:name="android.permission.health.READ_HEALTH_DATA_IN_BACKGROUND" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="false"
+        android:label="WearApp"
+        android:theme="@style/Theme.AppCompat.Light">
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+        <activity
+            android:name=".presentation.MainActivity"
+            android:exported="true"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".presentation.DataLayerService"
+            android:exported="true">
+            <intent-filter>
+                <!-- Lắng nghe sự kiện Data Layer từ điện thoại -->
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED"/>
+                <data android:scheme="wear" android:host="*" android:pathPrefix="/health_data"/>
+            </intent-filter>
+        </service>
+    </application>
+</manifest>

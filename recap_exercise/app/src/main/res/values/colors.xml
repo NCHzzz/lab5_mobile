@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Dark Theme Colors -->
+    <color name="primary_color">#8B5CF6</color>
+    <color name="primary_variant">#7C3AED</color>
+    <color name="secondary_color">#06B6D4</color>
+
+    <!-- Dark Background Colors -->
+    <color name="background_color">#0F172A</color>
+    <color name="card_background">#1E293B</color>
+    <color name="surface_color">#1E293B</color>
+
+    <!-- Dark Text Colors -->
+    <color name="text_primary">#F1F5F9</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <!-- Button Colors (keeping same vibrant colors for visibility) -->
+    <color name="background_task_color">#8B5CF6</color>
+    <color name="foreground_service_color">#06B6D4</color>
+    <color name="bound_service_color">#10B981</color>
+
+    <!-- Status Colors -->
+    <color name="status_idle">#64748B</color>
+    <color name="status_running">#F59E0B</color>
+    <color name="status_success">#10B981</color>
+    <color name="status_error">#EF4444</color>
+</resources>
